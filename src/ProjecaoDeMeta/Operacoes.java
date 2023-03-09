@@ -17,4 +17,40 @@ public class Operacoes extends CalculadoraProjeção{
 
         return getDiasFaltam();
     }
+
+    public double vendasPorAgentes(){
+        double vPoragenetes = getQtdVendasFaltam() / getQtdAgentes();
+
+        return vPoragenetes;
+    }
+
+    public double faltaVender(){
+
+        return getMetaMes() - getQtdVendasRealizadas();
+    }
+
+    public double mediaVenda(){
+
+        return getQtdVendasRealizadas()/ getDiasRealizados();
+    }
+
+    public double faltamPorDiaVenda(){
+
+        return getQtdVendasFaltam() / getDiasFaltam();
+    }
+
+    public double percentualAtingido(){
+
+        return getQtdVendasRealizadas()/getMetaMes();
+    }
+
+    public double projecaoReal(){
+
+        return (getQtdVendasRealizadas()/ getDiasRealizados()) * getDiasMes();
+    }
+
+    public double projecaoPercentutal(){
+
+       return projecaoReal()/getMetaMes();
+    }
 }
